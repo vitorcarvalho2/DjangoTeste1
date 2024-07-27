@@ -1,0 +1,37 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="ept-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <center>
+    <h1> index</h1>
+    <img src="{% static 'images/dj.png' %}" id="img1">
+        <h2>{{curso}}</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th> Product</th>
+                    <th> Price</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for product in products %}
+                <tr>
+                    <th><a href="{% url 'product' product.id %}">{{product.name}}</a></th>
+                    <td>{{product.price}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <button onclick="teste(); ">Clique</button>
+    </center>
+    <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
+
+</body>
+</html>
